@@ -78,3 +78,27 @@ kubectl delete  deploy debug
 kubectl get pods
 <leeg>
 ```
+
+## 2 Dockerfile
+```
+cat debug/Dockerfile
+cat frontend/Dockerfile
+```
+
+## 3 frontend
+hoe vind het front-end de backend:
+```
+grep backend frontend/frontend-deployment.yaml
+```
+
+start het frontend
+kubectl create -f frontend/frontend-deployment.yaml
+
+```
+kubectl get deployments
+kubectl get pods
+kubectl logs <pod name>
+kubectl port-forward <pod name> 8080
+open http://localhost:8080/
+```
+Failed to reach the backend 😐
