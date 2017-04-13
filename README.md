@@ -134,3 +134,16 @@ open http://$(minikube ip):<nodeport>
 ```
 
 Response from the backend: "Failed to reach mongodb 😐"
+
+## 7 mongodb StatefulSet. (v/h PetSet)
+
+```
+kubectl create -f mongodb/mongodb-service.yaml
+kubectl create -f mongodb/mongodb-statefulset.yaml
+kubectl get services
+kubectl get statefulsets
+kubectl get pods
+kubectl get persistentvolumeclaims
+open http://$(minikube ip):<nodeport>
+```
+
