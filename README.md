@@ -126,3 +126,11 @@ kubectl get services
 ```
 
 Response from the backend: "Failed to reach mongodb 😐"
+
+## 6 access frontend from outside the cluster
+```
+kubectl describe service frontend
+open http://$(minikube ip):<nodeport>
+```
+
+Response from the backend: "Failed to reach mongodb 😐"
