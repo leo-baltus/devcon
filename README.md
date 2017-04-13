@@ -72,8 +72,9 @@ kubectl cluster-info
 ```
 
 ##opruimen
+```
 kubectl get deploy
 kubectl delete  deploy debug
 kubectl get pods
 <leeg>
-
+```
