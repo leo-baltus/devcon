@@ -42,7 +42,9 @@ docker inspect
 ```
 
 ## namespaces
+```
 kubectl get pods
 vs
 kubectl get pods --namespace=kube-system
+```
 
