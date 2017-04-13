@@ -48,3 +48,15 @@ vs
 kubectl get pods --namespace=kube-system
 ```
 
+
+## Serviceaccount
+'default' is in elke namespace aanwezig
+```
+kubectl get serviceAccounts
+
+kubectl get pods/<podname> -o yaml  | grep serviceAccountName
+```
+De 'default' kan standaard bij de api:
+```
+cat /var/run/secrets/kubernetes.io/serviceaccount/token
+```
