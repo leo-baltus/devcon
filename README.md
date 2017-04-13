@@ -35,8 +35,14 @@ kubectl get pods
 kubectl kubectl scale deployment debug --replicas=1
 ```
 
-``
+```
 minikube ssh
 docker ps
 docker inspect
 ```
+
+## namespaces
+kubectl get pods
+vs
+kubectl get pods --namespace=kube-system
+
