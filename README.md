@@ -186,3 +186,25 @@ open http://frontend.workshop:<nginx-ingress-lb nodeport>
 vs
 open http://fake.workshop:<nginx-ingress-lb nodeport>
 ```
+
+## Hoe verder
+* K8s concepts (Jobs, Daemonsets, Secrets Configmap ... kubectl help)
+* k8s labels & selectors
+* Deploy in cloud vs. on-premise
+* Multi-master deployment
+* Multi-zone deployment & Federation
+* etcd beveiliging
+* hoe/waar sla je configuratie op
+* authenticatie & autorisatie (pki)
+* Beveiliging
+* Monitoring
+* Logging
+* Kies een ingress controller
+* zoek werk voor het cluster
+* upgrade policy (nieuw cluster vs livemigratie)
+* begrijp networking & plugins
+* wil je persistentvolumes: ceph? nfs? userids(argh!)
+* spinnaker, fabric8
+* policy rond om dockerimages ?
+* reboot schema
+
