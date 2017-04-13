@@ -147,3 +147,9 @@ kubectl get persistentvolumeclaims
 open http://$(minikube ip):<nodeport>
 ```
 
+## 8 Scale all the things!
+```
+kubectl scale deployment frontend --replicas=5
+kubectl scale deployment backend --replicas=3
+kubectl get pods
+```
