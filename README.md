@@ -173,3 +173,16 @@ kubectl scale deployment frontend --replicas=2
 kubectl apply -f frontend/frontend-deployment2.yaml
 ```
 
+## 10 ingress controller
+
+```
+kubectl create -f controller.yaml
+kubectl create -f frontend/frontend-ingress.yaml
+kubectl get ingresses
+<edit /etc/hosts to resolve frontend.workshop to minikube ip>
+<edit /etc/hosts to resolve fake.workshop to minikube ip>
+kubectl describe service nginx-ingress-lb
+open http://frontend.workshop:<nginx-ingress-lb nodeport>
+vs
+open http://fake.workshop:<nginx-ingress-lb nodeport>
+```
