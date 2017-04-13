@@ -153,3 +153,23 @@ kubectl scale deployment frontend --replicas=5
 kubectl scale deployment backend --replicas=3
 kubectl get pods
 ```
+
+
+'Pending state' ?
+
+```
+kubectl get events
+```
+
+scale down if needed
+```
+kubectl scale deployment frontend --replicas=2
+```
+
+
+## 9 Do a almost-rolling update of the frontend
+
+```
+kubectl apply -f frontend/frontend-deployment2.yaml
+```
+
