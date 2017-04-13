@@ -60,3 +60,20 @@ De 'default' kan standaard bij de api:
 ```
 cat /var/run/secrets/kubernetes.io/serviceaccount/token
 ```
+
+## dashboard
+```
+minikube dashboard
+```
+maar zie ook cluster-info
+```
+kubectl cluster-info
+
+```
+
+##opruimen
+kubectl get deploy
+kubectl delete  deploy debug
+kubectl get pods
+<leeg>
+
