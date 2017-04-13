@@ -102,3 +102,17 @@ kubectl port-forward <pod name> 8080
 open http://localhost:8080/
 ```
 Failed to reach the backend 😐
+
+## 4 backend
+
+```
+kubectl create -f backend/backend-deployment.yaml
+kubectl get deployments
+kubectl get pods
+kubectl logs <pod name>
+kubectl port-forward <pod name> 8080
+open http://localhost:8080/
+```
+
+Failed to reach the backend 😐
+(nog geen service)
