@@ -116,3 +116,13 @@ open http://localhost:8080/
 
 Failed to reach the backend 😐
 (nog geen service)
+
+## 5  frontend & backend service
+```
+kubectl create -f frontend/frontend-service.yaml
+kubectl get services
+kubectl create -f backend/backend-service.yaml
+kubectl get services
+```
+
+Response from the backend: "Failed to reach mongodb 😐"
