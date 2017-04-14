@@ -41,7 +41,7 @@ docker ps
 docker inspect
 ```
 
-## namespaces
+### namespaces
 ```
 kubectl get pods
 vs
@@ -49,7 +49,7 @@ kubectl get pods --namespace=kube-system
 ```
 
 
-## Serviceaccount
+### Serviceaccount
 'default' is in elke namespace aanwezig
 ```
 kubectl get serviceAccounts
@@ -61,7 +61,7 @@ De 'default' kan standaard bij de api:
 cat /var/run/secrets/kubernetes.io/serviceaccount/token
 ```
 
-## dashboard
+### Dashboard
 ```
 minikube dashboard
 ```
@@ -71,7 +71,7 @@ kubectl cluster-info
 
 ```
 
-##opruimen
+### Opruimen
 ```
 kubectl get deploy
 kubectl delete  deploy debug
@@ -86,14 +86,17 @@ cat frontend/Dockerfile
 ```
 
 ## 3 frontend
-hoe vind het front-end de backend:
+Hoe vind het front-end de backend:
 ```
 grep backend frontend/frontend-deployment.yaml
 ```
 
-start het frontend
+Start het frontend
+```
 kubectl create -f frontend/frontend-deployment.yaml
+```
 
+kijk naar de deployments, pods, frontend web-ui
 ```
 kubectl get deployments
 kubectl get pods
@@ -103,7 +106,7 @@ open http://localhost:8080/
 ```
 Failed to reach the backend 😐
 
-## 4 backend
+## 4 Backend
 
 ```
 kubectl create -f backend/backend-deployment.yaml
@@ -117,7 +120,7 @@ open http://localhost:8080/
 Failed to reach the backend 😐
 (nog geen service)
 
-## 5  frontend & backend service
+## 5 Frontend & backend service
 ```
 kubectl create -f frontend/frontend-service.yaml
 kubectl get services
@@ -127,7 +130,7 @@ kubectl get services
 
 Response from the backend: "Failed to reach mongodb 😐"
 
-## 6 access frontend from outside the cluster
+## 6 Access frontend from outside the cluster
 ```
 kubectl describe service frontend
 open http://$(minikube ip):<nodeport>
@@ -135,7 +138,7 @@ open http://$(minikube ip):<nodeport>
 
 Response from the backend: "Failed to reach mongodb 😐"
 
-## 7 mongodb StatefulSet. (v/h PetSet)
+## 7 Mongodb StatefulSet (v/h PetSet)
 
 ```
 kubectl create -f mongodb/mongodb-service.yaml
@@ -154,18 +157,16 @@ kubectl scale deployment backend --replicas=3
 kubectl get pods
 ```
 
-
 'Pending state' ?
 
 ```
 kubectl get events
 ```
 
-scale down if needed
+Scale down if needed
 ```
 kubectl scale deployment frontend --replicas=2
 ```
-
 
 ## 9 Do a almost-rolling update of the frontend
 
